@@ -282,6 +282,7 @@ class ChatRoom extends React.Component {
       isTyping: [],
       chatofuser: [],
     };
+
     this.sendMessage = this.sendMessage.bind(this);
     this.typing = this.typing.bind(this);
     this.resetTyping = this.resetTyping.bind(this);
@@ -291,7 +292,6 @@ class ChatRoom extends React.Component {
     const query1 = query(collection(db, "chats"));
 
     onSnapshot(query1, (qS) => {
-      let is = 0;
       qS.docs.map((item) => {
         if (
           (item.data().p1 == this.props.tomail &&
@@ -300,48 +300,11 @@ class ChatRoom extends React.Component {
             item.data().p1 == this.props.frommail)
         ) {
           this.setState({ chatofuser: item.data().chat });
-          is = 1;
         }
       });
     });
-
-    setInterval(() => {
-      const qq = query(collection(db, "chats"));
-      onSnapshot(qq, (qS) => {
-        let ele;
-        let is = 0;
-        qS.docs.map((item) => {
-          if (
-            (item.data().p1 == this.props.tomail &&
-              item.data().p2 == this.props.frommail) ||
-            (item.data().p2 == this.props.tomail &&
-              item.data().p1 == this.props.frommail)
-          ) {
-            ele = item.data();
-            ele.chat = this.state.chatofuser;
-            //updating state
-            this.setState({ chatofuser: ele.chat });
-            // hh(ele);
-          }
-        });
-      });
-      console.log(this.state.chatofuser);
-    }, 10);
-    // addDoc(collection(db, "chats"), obj)
-    //   .then((result) => {
-    //     result.map((item) => {
-    // if (
-    //   (item.p1 == this.props.tomail && item.p2 == this.props.frommail) ||
-    //   (item.p1 == this.props.frommail && item.p1 == this.props.frommail)
-    // ) {
-    //   this.setState({ chatofuser: item.chat });
-    // }
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     alert(err);
-    //   });
   }
+
   /* adds a new message to the chatroom */
 
   sendMessage(sender, senderAvatar, message) {
@@ -351,9 +314,8 @@ class ChatRoom extends React.Component {
       senderAvatar: senderAvatar,
     };
 
-    let ele = this.state.chatofuser;
+    let ele = this.props.ff;
     ele.push(newObj);
-    this.setState(ele);
 
     setDoc(doc(db, "chats", this.props.idofchat), {
       p1: this.props.tomail,
@@ -361,8 +323,9 @@ class ChatRoom extends React.Component {
       chat: ele,
     });
 
-    // }, 400);
+    this.componentDidMount();
   }
+
   /* updates the writing indicator if not already displayed */
   typing(writer) {
     if (!this.state.isTyping[writer]) {
@@ -378,7 +341,7 @@ class ChatRoom extends React.Component {
     this.setState({ isTyping: stateTyping });
   }
   render() {
-    if (this.state.chatofuser == []) return <h1>Loading...</h1>;
+    if (this.props.ff == []) return <h1>Loading...</h1>;
 
     let users = {};
     let chatBoxes = [];
@@ -398,13 +361,6 @@ class ChatRoom extends React.Component {
       avatar: "https://i.pravatar.cc/150?img=56",
     };
 
-    /* test with two other users :)
-		users[2] = { name: 'Kate', avatar: 'https://i.pravatar.cc/150?img=47' };
-		users[3] = { name: 'Patrick', avatar: 'https://i.pravatar.cc/150?img=14' };
-		*/
-    /* creation of a chatbox for each user present in the chatroom */
-    // Object.keys(users).map(function (key) {
-    //   var user = users[key];
     chatBoxes.push(
       <ChatBox
         key="{key}"
@@ -414,12 +370,16 @@ class ChatRoom extends React.Component {
         sendMessage={sendMessage}
         typing={typing}
         resetTyping={resetTyping}
-        messages={this.state.chatofuser}
+        messages={this.props.ff}
         isTyping={isTyping}
       />
     );
-    // });
-    return <div className={"chatApp__room"}>{chatBoxes}</div>;
+
+    return (
+      <>
+        <div className={"chatApp__room"}>{chatBoxes}</div>{" "}
+      </>
+    );
   }
 }
 

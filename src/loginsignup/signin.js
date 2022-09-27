@@ -2,9 +2,11 @@ import React, { useContext, useState } from "react";
 import { logcontstu } from "../Loginsignincontext/context";
 import "./login.css";
 import { db } from "../Loginsignincontext/firebase";
+import { storage } from "../Loginsignincontext/firebase";
 
 import Button from "@mui/material/Button";
 import { NavLink, Route, useNavigate } from "react-router-dom";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import Alert from "@mui/material/Alert";
 import { addDoc, collection } from "firebase/firestore";
@@ -19,6 +21,7 @@ function Signin() {
   const [cpass, setcpass] = useState("");
   const [err, seterr] = useState("");
   const [nameofuser, setnameofuser] = useState("");
+  const [avatar, setavatar] = useState(null);
 
   function signinuser() {
     if (pass != cpass) {
@@ -35,17 +38,38 @@ function Signin() {
           Name: nameofuser,
           Email: email,
           Posted_project: [],
+          chats: [],
         };
+
+        const storageRef = ref(storage, `/Avatar/${email}`);
+
+        const uploadTask = uploadBytesResumable(storageRef, avatar);
+
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const percent = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+          },
+          (err) => console.log(err),
+          () => {
+            // download url
+            getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+              // alert(url);
+            });
+          }
+        );
 
         addDoc(collection(db, "all_people"), obj)
           .then((result) => {
-            alert(JSON.stringify(result));
+            // alert(JSON.stringify(result));
             alert("you are succesfully signin");
             navigate("/");
             window.location.reload();
           })
           .catch((err) => {
-            alert(err);
+            alert("some error occured try again. ");
           });
       })
       .catch((err) => {
@@ -77,6 +101,20 @@ function Signin() {
                     value={nameofuser}
                     onChange={(e) => {
                       setnameofuser(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div class="input-box">
+                <span class="label">Name</span>
+                <div class=" flex-r input">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    placeholder="Upload"
+                    onChange={(e) => {
+                      setavatar(e.target.files[0]);
                     }}
                   />
                 </div>

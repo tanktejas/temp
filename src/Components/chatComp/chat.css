@@ -47,10 +47,11 @@ html, body {
 	left: 1.5em;
 }
 .chatApp__room {
+	width: 630px; 
 	display: flex;
 	align-content: flex-start;
 	justify-content: center;
-	padding: 5rem 20rem;
+	/* padding: 5rem 20rem; */
 	animation: fadeChatApp 0.6s ease-in-out;
 	animation-fill-mode: forwards;
 }
@@ -380,4 +381,37 @@ html, body {
 
 .chat_header .Name h3{
     font-size: 34px;
+}
+.onechat{
+	display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 9px 0px;
+    width: 175px;
+}
+.chatApp{
+	display: flex;
+	justify-content: center;
+}
+.onechat h4{
+	text-align: center !important;
+	margin: auto !important;
+	font-size: 23px;
+}
+.allchat a{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.allchat h3{
+	text-align: center;
+	margin: auto;
+}
+.onechat img{
+	width: 53px;
+	height: 53px;
+	border-radius: 50%;
+}
+.firstchat{
+	margin-top: 49px;
 }

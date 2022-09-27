@@ -72,7 +72,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />}></Route>
           <Route
             exact
-            path="/QnA"
+            path="/QnA"  
             element={<Private Comp={<Comment />} />}
           ></Route>
           <Route exact path="/chat/:to" element={<Mainchat />}></Route>
