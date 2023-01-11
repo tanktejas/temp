@@ -120,7 +120,7 @@ function Header() {
                 </button>
 
                 <div
-                  className="collapse navbar-collapse spec"
+                  className="navbar-collapse spec"
                   id="navTrigger"
                   style={navicon}
                 >
@@ -131,6 +131,13 @@ function Header() {
                       </NavLink>
                     </li>
 
+                    {(curruser || currstudent) && (
+                      <li className="nav-item ">
+                        <NavLink className="nav-link" to="/chat">
+                          My Chat
+                        </NavLink>
+                      </li>
+                    )}
                     <li
                       className="nav-item dropdown"
                       onClick={() => {
@@ -148,7 +155,7 @@ function Header() {
                         aria-haspopup="true"
                         aria-expanded="true"
                       >
-                        Scholarships
+                        Projects
                       </NavLink>
 
                       <div
@@ -193,12 +200,6 @@ function Header() {
                       </div>
                     </li>
 
-                    <li className="nav-item ">
-                      <Link className="nav-link  " to="/QnA">
-                        Q&A
-                      </Link>
-                    </li>
-
                     <li className="nav-item dropdown">
                       <Link
                         style={{ textDecoration: "none" }}
@@ -215,17 +216,11 @@ function Header() {
                         Contact
                       </NavLink>
                     </li>
-                    {!curruser && !currstudent && (
-                      <li className="nav-item">
-                        <NavLink className="nav-link" to="/login">
-                          Developer Login
-                        </NavLink>
-                      </li>
-                    )}
+
                     {!currstudent && !curruser && (
                       <li className="nav-item">
                         <NavLink className="nav-link" to="/slogin">
-                          Non-Developer Login
+                          Login / Signin
                         </NavLink>
                       </li>
                     )}
@@ -236,17 +231,17 @@ function Header() {
                         </NavLink>
                       </li>
                     )}
-                    {curruser && (
+                    {currstudent && (
                       <li className="nav-item">
                         <a
                           className="nav-link"
-                          href={dashboardurl}
-                          target="__tejas"
+                          href="http://localhost:3000/dashboard"
                         >
                           Dashboard
                         </a>
                       </li>
                     )}
+
                     {curruser && (
                       <li className="nav-item">
                         <button

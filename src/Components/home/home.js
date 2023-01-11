@@ -28,7 +28,7 @@ import {
 
 import { addDoc, Timestamp } from "firebase/firestore";
 
-function  Home() {
+function Home() {
   const [schodata, setsch] = useState([]);
   const [search, setsearch] = useState("");
   const [status, setstatus] = useState(true);
@@ -259,7 +259,7 @@ function  Home() {
                 Name={ele.data().Name}
                 Description={ele.data().Description}
                 Imageurl={ele.data().Imageurl}
-                Date={ele.data().Date}
+                date={ele.data().Date}
                 TechStack={ele.data().TechStack}
                 id={ele.id}
               />

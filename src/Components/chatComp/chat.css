@@ -55,6 +55,57 @@ html, body {
 	animation: fadeChatApp 0.6s ease-in-out;
 	animation-fill-mode: forwards;
 }
+.chatbackground{
+	background-image: url("https://i.pinimg.com/550x/f4/15/ce/f415ce5c6d49015f8194fff60b8392a7.jpg");
+	width: 500px;
+	height: 600px;
+	margin-top: 46px;
+	border-radius: 50px;
+	box-shadow: 3px 3px 19px 2px rgb(76, 75, 75);
+
+}
+#chatApp
+{
+	margin-top:20px;
+}
+.chatApp__conv{
+	margin-top: 46px;
+}
+
+.allchat h3{
+	background-color: rgb(236, 216, 59);
+	border-radius: 19px;
+	
+}
+
+.chatdash{
+	display: flex;
+	justify-content:center;
+	margin-top: 32px; 
+}
+.allchat{
+	margin-top: 24px;
+}
+.allchat a {
+	border-radius: 13px;
+	background-color: #90c9ef;
+	margin: 9px;
+
+}
+.allchat a{
+	text-decoration: none;
+	list-style: none;
+}
+.allchat a div h4{
+	color: black;
+
+}
+.chatdash div
+{
+	/* width: 50%; */
+	padding-right: 29px;
+}
+
 .chatApp__conv {
 	flex-grow: 1;
 	flex-shrink: 1;

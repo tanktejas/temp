@@ -27,15 +27,31 @@ import { logcontstu } from "../../Loginsignincontext/context";
 function Details({ data }) {
   const [scholar, setscho] = useState([]);
   const { student } = useContext(logcontstu);
+  const [projectposter_email, setmail] = useState("");
+
   useEffect(() => {
     const q = query(collection(db, "all-project"));
     onSnapshot(q, (qS) => {
       let data = qS.docs;
       setscho(data.slice(0, 2));
     });
+
+    const q1 = query(collection(db, "all_people"));
+    onSnapshot(q1, (qS) => {
+      qS.docs.map((item) => {
+        if (item.data().Name == data.posted_by) {
+          setmail(item.data().Email);
+        }
+      });
+    });
   }, []);
 
-  if (scholar.length == 0) {
+  if (
+    scholar.length == 0 ||
+    scholar == [] ||
+    data == [] ||
+    projectposter_email == ""
+  ) {
     return (
       <>
         <h1>Loading...</h1>
@@ -59,7 +75,7 @@ function Details({ data }) {
             <CalendarMonthIcon />
             <div class="fleep">
               <h4>Posted On :</h4>
-              <h6>{data.Date.toDate().toDateString()}</h6>
+              <h6>{data.Date}</h6>
             </div>
           </div>
         </div>
@@ -81,7 +97,7 @@ function Details({ data }) {
                   <article class="brandScholarshipDetails_contentBoxWrapper___GQGi">
                     <span class="brandScholarshipDetails_calendarIcon__2-5hX">
                       <CalendarMonthIcon />
-                      <p>Posted On : {data.Date.toDate().toDateString()}</p>
+                      {/* <p>Posted On : {new Date(data?.Date)}</p> */}
                     </span>
                     <article class="brandScholarshipDetails_sectionBox__yP4qi brandScholarshipDetails_firstElem__2pjgC">
                       <span class="brandScholarshipDetails_sectionTitle__2t6sl  sec-t">
@@ -134,7 +150,10 @@ function Details({ data }) {
                           Pick Project
                         </button>
                       </a>
-                      <Link class="button2 get-a-demo m-2" to="/chat">
+                      <Link
+                        class="button2 get-a-demo m-2"
+                        to={"/chat/" + projectposter_email}
+                      >
                         Chat with Owner
                       </Link>
                     </article>

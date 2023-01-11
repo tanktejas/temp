@@ -72,7 +72,7 @@ class InputMessage extends React.Component {
     var loadingClass = this.props.isLoading
       ? "chatApp__convButton--loading"
       : "";
-    let sendButtonIcon = <i className={"material-icons"}>send</i>;
+    let sendButtonIcon = <i className="material-icons">send</i>;
     return (
       <form onSubmit={this.handleSendMessage}>
         <input

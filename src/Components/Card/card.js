@@ -6,28 +6,39 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import RoomIcon from "@material-ui/icons/Room";
 import CreateIcon from "@mui/icons-material/Create";
 
-function Card({ Name, Description, Imageurl, Date, TechStack, id }) {
+function Card({ Name, Description, Imageurl, date, TechStack, id }) {
   const url = "/project/" + id;
+
   return (
     <>
       <div className="bg-white w-72 shadow-lg rounded-lg cardmain">
-        <img
+        {/* <img
           src={Imageurl}
           alt=""
           className="w-full h-44 object-cover rounded-t-lg"
-        />
+        /> */}
         <div className="px-6 py-3 sbody">
           <div className="bodypart">
-            <p className="text-gray-800 pt-3 pb-2 dead">
-              <CreateIcon />{" "}
-              <span className="dedy"> {Date.toDate().toDateString()}</span>
-            </p>
-            <h1
-              className="font-bold text-[20px] stag"
-              style={{ textDecoration: "none" }}
-            >
-              {Name}
-            </h1>
+            <div className="innnis">
+              <h1
+                className="font-bold text-[20px] stag"
+                style={{ textDecoration: "none" }}
+              >
+                {Name}
+              </h1>
+              <p className="text-gray-800 pt-3 pb-2 dead">
+                <CreateIcon />{" "}
+                <span className="dedy">
+                  {" "}
+                  {new Date(date).getDate().toString() +
+                    "/" +
+                    (new Date(date).getMonth() + 1).toString() +
+                    "/" +
+                    new Date(date).getFullYear().toString()}
+                </span>
+              </p>
+            </div>
+
             <div className="eligi">
               <h5>Small description :</h5>
               <h6>{Description[0] + "."}</h6>

@@ -41,9 +41,11 @@ function Mainchat() {
 
   useEffect(() => {
     settomail(to);
+
     if (student != "no") {
       setfrommail(student?.email);
       const queryy = query(collection(dbnondev, "all_people"));
+      // alert(student?.email);
 
       onSnapshot(queryy, (qs) => {
         qs.docs.map((item) => {
@@ -54,7 +56,7 @@ function Mainchat() {
             settooo(item.data());
           }
           if (item.data().Email == student?.email) {
-            console.log(frommail);
+            // alert(frommail);
             setfrom(item.data().Name);
             setfrommm(item.data());
             setdocidfrom(item.id);
@@ -124,7 +126,7 @@ function Mainchat() {
             setopponent(item.data().chats);
           }
         });
-      });      
+      });
     }
 
     const queryy = query(collection(dbnondev, "chats"));
@@ -140,14 +142,7 @@ function Mainchat() {
         }
       });
 
-      if (
-        is == 0 &&
-        toall != "" &&
-        fromall != "" &&
-        ok &&
-        opponentallchat != undefined &&
-        docid != ""
-      ) {
+      if (is == 0 && toall != "" && fromall != "" && ok && docid != "") {
         //for to user
 
         // alert("newobj");
@@ -157,6 +152,8 @@ function Mainchat() {
           name: fromname_,
         };
 
+        // alert("as");
+
         ele.push(newobj);
 
         setDoc(doc(dbnondev, "all_people", docid), {
@@ -165,6 +162,7 @@ function Mainchat() {
           Email: toall?.Email,
           Name: toall?.Name,
           chats: ele,
+          url: toall?.url,
         }).then(() => {
           // alert("added");
         });
@@ -174,6 +172,8 @@ function Mainchat() {
           p1: student?.email,
           p2: to,
         };
+
+        const qqw = query(collection(dbnondev, " chats"));
 
         addDoc(collection(dbnondev, "chats"), obj).then(() => {
           console.log("chat created..");
@@ -195,15 +195,19 @@ function Mainchat() {
           Email: fromall?.Email,
           Name: fromall?.Name,
           chats: ele,
+          url: fromall?.url,
         }).then(() => {
           // alert("created");
         });
-      }
-    });
 
-    if (student) {
-    }
+        // window.location.reload();
+      }
+
+      // alert(JSON.stringify(opponentallchat));
+    });
   }, [upperurl, ok]);
+
+  // alert(JSON.stringify(userall));
 
   if (
     toname_ == "" ||
@@ -215,18 +219,12 @@ function Mainchat() {
   ) {
     return <h1>Loading...</h1>;
   }
-  // alert(JSON.stringify(tomail));
-  // alert(JSON.stringify(frommail));
 
-  // alert(JSON.stringify(chatofuser));
-
-  // alert(fromname_);
-  // alert(toname_);
   return (
     <>
       <section id="chatApp" class="chatApp">
         <div className="allchat">
-          <h3>Your Chats</h3>
+          <h3> Chats </h3>
           {/* <div className="onechat">
               <img src="https://i.pravatar.cc/150?img=56"></img>
               <h4>Tejas</h4>

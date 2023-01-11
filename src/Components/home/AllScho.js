@@ -10,7 +10,7 @@ import Footer from "../footer/footer1";
 //firebase
 import { Link } from "react-router-dom";
 
-import { db } from "../DB/firebase";
+import { db } from "../../Loginsignincontext/firebase";
 
 import {
   collection,
@@ -36,7 +36,7 @@ function AllScho() {
 
   useEffect(() => {
     setstatus(false);
-    const q = query(collection(db, "Scholarships"));
+    const q = query(collection(db, "all-project"));
     onSnapshot(q, (qS) => {
       let data = qS.docs;
       setsch(data);
@@ -145,14 +145,14 @@ function AllScho() {
                 <div class="col-md-12 text-left">
                   <h1 class="section-title">
                     View All <br />
-                    National International Scholarships{" "}
+                    Posted Project by Trusted Client
                   </h1>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <section class="bg-primary text-light p-5">
+        {/* <section class="bg-primary text-light p-5">
           <div class="container">
             <div class="d-md-flex justify-content-around align-items-center">
               <h3 class="mb-3 mb-md-0 cc">Search Scholarship</h3>
@@ -243,7 +243,7 @@ function AllScho() {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
         <section class="mt-100 mb-100" id="services">
           <div
             class="container"
@@ -252,12 +252,11 @@ function AllScho() {
             {schodata.map((ele) => {
               return (
                 <Card
-                  status={ele.data().status}
-                  name={ele.data().name}
-                  eligiblity={ele.data().eligiblity}
-                  benefit={ele.data().benefit}
-                  deadline={ele.data().closeingDate}
-                  logo={ele.data().logo}
+                  Name={ele.data().Name}
+                  Description={ele.data().Description}
+                  Imageurl={ele.data().Imageurl}
+                  date={ele.data().Date}
+                  TechStack={ele.data().TechStack}
                   id={ele.id}
                 />
               );

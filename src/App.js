@@ -24,6 +24,7 @@ import Developersignin from "./Components/loginsigninuser/signin";
 import Developerforgot from "./Components/loginsigninuser/forgot1";
 
 import Dataform from "./Components/dataform/dataform";
+import Nondevprofile from "./Components/Non-dev-profile";
 
 //study
 import StudyAtG from "./Components/study/StudyAtR.js";
@@ -32,6 +33,14 @@ import StudyAtUK from "./Components/study/StudyAtUK";
 import StudyAtCa from "./Components/study/StudyAtCa";
 import StudyAtU from "./Components/study/StudyAtU.js";
 // import Dashboard from "./Dashboard/main";
+
+//dashboard
+import Dashboard from "./Components/dashboard/dashboard";
+import Editlandpage from "./Components/dashboard/Edit_Profile/Edit_landpage";
+import ChatDash from "./Components/chatComp/chatdashboard";
+import Edittagname from "./Components/dashboard/Edit_Profile/Edit_name_tag";
+import Uploadproject from "./Components/upload/uploadprojectpage";
+import Uploadedproject from "./Components/upload/uploadedproject";
 
 //private route
 import Private from "./private/privateRoute";
@@ -72,10 +81,33 @@ function App() {
           <Route exact path="/contact" element={<Contact />}></Route>
           <Route
             exact
-            path="/QnA"  
+            path="/QnA"
             element={<Private Comp={<Comment />} />}
           ></Route>
+          <Route exact path="/chat" element={<ChatDash />}></Route>
           <Route exact path="/chat/:to" element={<Mainchat />}></Route>
+          <Route exact path="/profile" element={<Nondevprofile />}></Route>
+          <Route
+            exact
+            path="/Dashboard/editprofileimage"
+            element={<Editlandpage />}
+          ></Route>
+          <Route
+            exact
+            path="/Dashboard/editprofiletagname"
+            element={<Edittagname />}
+          ></Route>
+          <Route
+            exact
+            path="/Dashboard/uploadproject"
+            element={<Uploadproject />}
+          ></Route>
+          <Route
+            exact
+            path="/Dashboard/uploadedproject"
+            element={<Uploadedproject />}
+          ></Route>
+          <Route exact path="/Dashboard" element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>
     </>

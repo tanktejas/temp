@@ -6,7 +6,12 @@ import { storage } from "../Loginsignincontext/firebase";
 
 import Button from "@mui/material/Button";
 import { NavLink, Route, useNavigate } from "react-router-dom";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  uploadBytes,
+} from "firebase/storage";
 
 import Alert from "@mui/material/Alert";
 import { addDoc, collection } from "firebase/firestore";
@@ -39,11 +44,18 @@ function Signin() {
           Email: email,
           Posted_project: [],
           chats: [],
+          url: [],
         };
 
         const storageRef = ref(storage, `/Avatar/${email}`);
 
         const uploadTask = uploadBytesResumable(storageRef, avatar);
+
+        // uploadBytes(storageRef, avatar).then(() => {
+        //   getDownloadURL(storageRef).then((url) => {
+        //     alert(url);
+        //   });
+        // });
 
         uploadTask.on(
           "state_changed",
@@ -51,26 +63,39 @@ function Signin() {
             const percent = Math.round(
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
+            // alert(percent);
           },
           (err) => console.log(err),
           () => {
             // download url
             getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-              // alert(url);
+              obj.url = url;
+              alert(url);
+              addDoc(collection(db, "all_people"), obj)
+                .then((result) => {
+                  // alert()
+                  // alert(JSON.stringify(result));
+                  alert("you are succesfully signin");
+                  navigate("/");
+                  window.location.reload();
+                })
+                .catch((err) => {
+                  alert("some error occured try again. ");
+                });
             });
           }
         );
 
-        addDoc(collection(db, "all_people"), obj)
-          .then((result) => {
-            // alert(JSON.stringify(result));
-            alert("you are succesfully signin");
-            navigate("/");
-            window.location.reload();
-          })
-          .catch((err) => {
-            alert("some error occured try again. ");
-          });
+        // addDoc(collection(db, "all_people"), obj)
+        //   .then((result) => {
+        //     // alert(JSON.stringify(result));
+        //     alert("you are succesfully signin");
+        //     navigate("/");
+        //     // window.location.reload();
+        //   })
+        //   .catch((err) => {
+        //     alert("some error occured try again. ");
+        //   });
       })
       .catch((err) => {
         seterr("Failed to Signin.");
@@ -114,7 +139,8 @@ function Signin() {
                     accept="image/*"
                     placeholder="Upload"
                     onChange={(e) => {
-                      setavatar(e.target.files[0]);
+                      alert("uploading");
+                      // alert(JSON.stringify(e.target.files));
                     }}
                   />
                 </div>
