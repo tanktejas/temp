@@ -13,7 +13,7 @@ function AboutUs() {
               <div class="col-md-12 text-left">
                 <h1 class="section-title">
                   A Single Portal of <br />
-                  National International Scholarships{" "}
+                  All types of projects{" "}
                 </h1>
               </div>
             </div>
@@ -30,27 +30,18 @@ function AboutUs() {
               </div>
 
               <p>
-                Our website is helpful to all the students who are willing to
-                get scholarships for their great careers and to help their
-                parents. by using{" "}
-                <Link style={{ textDecoration: "none" }} to="/">
-                  <a class="internal-links" href="#">
-                    Scholars
-                  </a>
-                </Link>{" "}
-                students make their future very bright and a bright future of
-                students can make a developed country.
+                Our website is helpful to all the Developers to do freelancing
+                work. They can pick some project which is posted by some client
+                and can work on that and client can post their project which has
+                to do.{" "}
               </p>
 
               <p>
-                Today, we are recognized under the top Scholarships Information
-                Provider Organization by renowned researching organizations and
-                firms. We owe the entire credit to our keen team of designers,
-                developers and strategists; who never let things go! In a single
-                word,{" "}
+                Our main goal is to make big impact to freelancing work across
+                the glob.
                 <Link style={{ textDecoration: "none" }} to="/">
                   <a class="internal-links" href="#">
-                    Scholars
+                    freelancing Hub
                   </a>
                 </Link>{" "}
                 is all about ‘doing things innovatively’ and ‘never giving up’.
@@ -85,18 +76,15 @@ function AboutUs() {
                   Who We Are ?
                 </h1>
                 <p>
-                  India’s largest scholarship network with the vision to make
-                  quality education accessible for all. A brainchild of IIT,
-                  IIIT, NIT and BVM Students, Scholars aggregates global
-                  scholarship information. We work hard to provides 100% correct
-                  information to the our students.
+                  India’s largest freelancing network with the vision to make
+                  all Connected.
                 </p>
 
-                <Link style={{ textDecoration: "none" }} to="/Team">
+                {/* <Link style={{ textDecoration: "none" }} to="/Team">
                   <a class=" button2 get-a-demo" href="#">
                     Meet Our Team
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 food-top-img food-top-img-n desktop-about-img">
@@ -125,14 +113,12 @@ function AboutUs() {
           <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 text-left">
               <div class="soln-heading">
-                <h2>Innovation meets endless opportunity At Scholars.</h2>
+                <h2>Innovation meets endless opportunity At FreelanceHUB.</h2>
               </div>
               <p>
-                As students, we have always experienced the joy of success in
-                getting scholarships. When any student gets scholarship
-                information from our platform and gets succeeds in it, it's a
-                very delighted feeling for us. We believe in student benefit
-                hence we can't take any personal information.
+                As a developer we are always enthusiastic to build projects. As
+                a client we always see to grow our business by making projects
+                from best class developer.
               </p>
               <a class="button2" href="#">
                 Explore
@@ -148,7 +134,7 @@ function AboutUs() {
                         <h2>+</h2>
                       </span>
                     </div>
-                    <h5>Students Benefited</h5>
+                    <h5>Client Benefited</h5>
                   </div>
                 </div>
                 <div class="col-md-12 col-sm-12 right">
@@ -168,7 +154,7 @@ function AboutUs() {
                             <h2>+</h2>
                           </span>
                         </div>
-                        <h5>Organization Connected</h5>
+                        <h5>Developer Connected</h5>
                       </div>
                     </div>
                     <div
@@ -182,7 +168,7 @@ function AboutUs() {
                             <h2>%</h2>
                           </span>
                         </div>
-                        <h5>Correct Information</h5>
+                        <h5>Project uploaded/done</h5>
                       </div>
                     </div>
                   </div>
@@ -205,11 +191,11 @@ function AboutUs() {
                 {" "}
                 <Link style={{ textDecoration: "none" }} to="/">
                   <a class="internal-links" href="#">
-                    Scholars
+                    freelancing Hub
                   </a>
                 </Link>{" "}
-                's mission is to organize scholarship information in a good
-                manner and help to get scholarships to every needy student.
+                's mission is to spread freelancing across the glob and grow
+                every developer skills.
               </p>
             </div>
           </div>
@@ -227,11 +213,11 @@ function AboutUs() {
                 {" "}
                 <Link style={{ textDecoration: "none" }} to="/">
                   <a class="internal-links" href="#">
-                    Scholars
+                    freelancing Hub
                   </a>
                 </Link>{" "}
-                's Goal is to help 100000+ student to get scholarships and to
-                connect every organizations to expand it world wide.
+                's Goal is to help 100000+ client to get their project done and
+                developer to grow their skill and earn money.
               </p>
             </div>
           </div>
@@ -242,13 +228,13 @@ function AboutUs() {
         class="food-client-video  home-food-client-video pb-5"
         style={{ backgroundColor: "rgb(220 236 251 / 71%)" }}
       >
-        <div class="container">
+        {/* <div class="container">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="client-video-head text-center">
                 <div class="soln-heading">
                   <h2 style={{ textAlign: "left" }}>
-                    Right from the Clientele Corner!
+                    Right from the Client Corner!
                   </h2>
                 </div>
               </div>
@@ -394,7 +380,7 @@ function AboutUs() {
               view more
             </a>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

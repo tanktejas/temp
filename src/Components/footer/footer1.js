@@ -174,7 +174,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="footer-link ftr__list nav">
+            {/* <div className="footer-link ftr__list nav">
               <h5
                 onClick={() => {
                   if (width <= 987) {
@@ -333,7 +333,7 @@ function Footer() {
                 </a>
                 All rights reserved.
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
       </footer>

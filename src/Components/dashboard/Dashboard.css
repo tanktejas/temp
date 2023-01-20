@@ -3,6 +3,13 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
+.dashnav nav
+{
+  margin-top: 74px;
+}
+.MuiButton-root
+{
+}
 .capitalize{
   color: black;
   text-decoration: none;

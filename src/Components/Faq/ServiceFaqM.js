@@ -29,71 +29,49 @@ function ServiceFaqM() {
                   <Accordion.Body>
                     <div class="panel-body">
                       <p>You can follow following steps:</p>
-                      <p>- Atleast first deadline completed</p>{" "}
+                      <p>- go to your profile dashboard.</p>{" "}
                       <p>
-                        - After Deadline time to find the one who need it and
-                        suitable candidate for it
+                        - After that click on upload project and fill require
+                        details.
                       </p>
-                      <p>- Size of the application.</p>{" "}
-                      <p>
-                        - Advanced features if there are any to be included.
-                      </p>
-                      <p>
-                        - Finalizing and provided to next level for final
-                        confirmation
-                      </p>
-                      <p>- usually 2 month on and average</p>
+                      <p>- At the end click on submit button.</p>{" "}
+                      <p>- And it is done your project is uploaded.</p>
                     </div>
                     {/* <!-- <div class="bg-soft-green rounded-lg border px-4 py-3 mt-20">You’ll be sent a confirmation email to verify you so make sure you check your email.</div> --> */}
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                   <Accordion.Header>
-                    How to decide which scholarships to apply?
+                    How to pick project as a developer ??
                   </Accordion.Header>
                   <Accordion.Body>
                     <div class="panel-body">
                       <p>
-                        - First of all do following steps just after taking
-                        admission into any college or may be univercity
+                        - First of all Look at the project section in website.
                       </p>
+                      <p>- Find the project which you want to build.</p>
                       <p>
-                        - Talk to your seniour and concern teachers about it
-                        they will definately give you good information about it.
+                        - click on "chat with owner" to discuss details of
+                        project and he/she will give you project to construct.
                       </p>
-                      <p>
-                        -Then after knowing scholarships name come to our
-                        platform to take deep information about that.
-                      </p>
-                      <p>
-                        - THere are many features available through which gather
-                        and understand every possible things about that
-                        scholarships
-                      </p>
-                      <p>
-                        - Match their requirement with your qualifycation
-                        (Gather all nessary documents).
-                      </p>
-                      <p>- Then simply apply for it using scholars.</p>
                     </div>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>
-                    How to know that when any scholarships proposal started or
-                    ending?
+                    How to be a best in freelancing?
                   </Accordion.Header>
                   <Accordion.Body>
                     <div class="panel-body">
                       <p>
-                        with great pleasure, we have a great content team who
-                        provide you starting and ending date of any scholarships
-                        on scholars platform.
+                        Complete as much as project you can and at the end you
+                        will have good grip over all tech-stack and have a
+                        strong profile.
                       </p>
                     </div>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="3">
+                {/* <Accordion.Item eventKey="3">
                   <Accordion.Header>
                     What are the steps after deciding Scholarships for me?
                   </Accordion.Header>
@@ -187,7 +165,7 @@ function ServiceFaqM() {
                       </p>
                     </div>
                   </Accordion.Body>
-                </Accordion.Item>
+                </Accordion.Item> */}
               </Accordion>
             </div>
           </div>

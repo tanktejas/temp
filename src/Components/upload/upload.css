@@ -1,6 +1,6 @@
 .sectobeflex{
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
 }
 .cccc{
     display: flex;

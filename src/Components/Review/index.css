@@ -1,0 +1,22 @@
+.outerreview
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.outerreview div{
+
+    margin: 12px;
+}
+.outerreview div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.butforre{
+    font-size: 13px !important;
+  background-color: rgb(23, 23, 199) !important;
+}
+.MuiTypography-root{
+    font-size: 24px !important; 
+}

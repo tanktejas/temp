@@ -157,47 +157,11 @@ function Header() {
                       >
                         Projects
                       </NavLink>
-
-                      <div
-                        className="dropdown-menu  "
-                        aria-labelledby="navbarDropdown"
-                        style={scho}
-                      >
-                        {/* <div className="row no-gutters distinct">
-                        <div className="col-lg-6"> */}
-                        <NavLink
-                          to="/ViewAllScholarships"
-                          className=" dropdown-item"
-                        >
-                          National Scholarship
-                        </NavLink>
-
-                        <a href="#" className="dropdown-item">
-                          Govrnment Scholarship
-                        </a>
-
-                        <a href="#" className="dropdown-item">
-                          Private Scholarship
-                        </a>
-
-                        <a href="#" className="dropdown-item">
-                          Compititive Exam <br /> based scolarship
-                        </a>
-
-                        <a href="#" className="dropdown-item">
-                          Foreign Study <br />
-                          based Scholarships
-                        </a>
-
-                        <a href="#" className="dropdown-item">
-                          Indian Research <br /> Scholarship
-                        </a>
-
-                        <a href="#" className="dropdown-item">
-                          Foreign Research
-                          <br /> Scolarship
-                        </a>
-                      </div>
+                    </li>
+                    <li className="nav-item ">
+                      <NavLink className="nav-link " to="/review">
+                        Give Review
+                      </NavLink>
                     </li>
 
                     <li className="nav-item dropdown">
@@ -233,12 +197,9 @@ function Header() {
                     )}
                     {currstudent && (
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="http://localhost:3000/dashboard"
-                        >
+                        <Link className="nav-link" to="/dashboard">
                           Dashboard
-                        </a>
+                        </Link>
                       </li>
                     )}
 

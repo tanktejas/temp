@@ -45,6 +45,8 @@ import Uploadedproject from "./Components/upload/uploadedproject";
 //private route
 import Private from "./private/privateRoute";
 import Mainchat from "./Components/chatComp/mainchat";
+import Review from "./Components/Review/review";
+import Givereview from "./Components/Review/give_review";
 
 function App() {
   return (
@@ -70,7 +72,7 @@ function App() {
           <Route exact path="/login" element={<Developerlogin />}></Route>
           <Route exact path="/signin" element={<Developersignin />}></Route>
           <Route exact path="/forgot" element={<Developerforgot />}></Route>
-
+          <Route exact path="/review" element={<Review />}></Route>
           <Route exact path="/form" element={<Dataform />}></Route>
           <Route exact path="/study-at-rusia" element={<StudyAtR />}></Route>
           <Route exact path="/study-at-ukrain" element={<StudyAtUK />}></Route>
@@ -94,6 +96,11 @@ function App() {
           ></Route>
           <Route
             exact
+            path="/review/:nameofrevi"
+            element={<Givereview />}
+          ></Route>
+          <Route
+            exact
             path="/Dashboard/editprofiletagname"
             element={<Edittagname />}
           ></Route>
@@ -104,9 +111,11 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/Dashboard/uploadedproject"
+            path="/Dashboard/Uploadedproject"
             element={<Uploadedproject />}
-          ></Route>
+          ></Route>    
+          <Route exact path="/review" element={<Uploadproject />}></Route>
+
           <Route exact path="/Dashboard" element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>

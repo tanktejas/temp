@@ -5,6 +5,12 @@
     content: '';
     height: 60px;
 } */
+.panel-body p{ 
+    visibility:visible;
+}
+.row{
+    justify-content: space-around;
+}
 .left h1{
     font-size: calc(1.375rem + 1.5vw) !important;
 }

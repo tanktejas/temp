@@ -131,6 +131,12 @@ function Dashboard() {
       .catch((err) => {
         alert("some error occured, please try again");
       });
+
+    setproinfo({
+      name: "",
+      description: "",
+      techstack: "",
+    });
   };
 
   const deleteprojectfromcompleted = (item) => {
@@ -155,7 +161,7 @@ function Dashboard() {
   return (
     <>
       <div class="lg:flex min-h-screen">
-        <aside class="grow-0 bg-white pl-7 pr-16 pb-12 sm:pl-16 sm:pr-24 sm:pb-12 lg:pb-16 relative grid">
+        <aside class="grow-0 bg-white pl-7 pr-16 pb-12 sm:pl-16 sm:pr-24 sm:pb-12 lg:pb-16 relative dashnav">
           <div>
             <img
               src={
@@ -476,7 +482,7 @@ function Dashboard() {
                     ></path>
                   </svg>
                 </h3>
-                {currentuser?.Review?.map((item) => {
+                {currentuser?.review?.map((item) => { 
                   let color = Math.random().toString(16).substr(-6);
                   return (
                     <>
@@ -489,7 +495,7 @@ function Dashboard() {
                           }}
                           href="#"
                         >
-                          {item.text}
+                          {item}
                         </a>
                       </div>
                     </>
