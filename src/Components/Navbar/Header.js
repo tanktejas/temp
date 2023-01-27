@@ -181,6 +181,16 @@ function Header() {
                       </NavLink>
                     </li>
 
+                    <li className="nav-item ">
+                      <a
+                        className="nav-link "
+                        href="https://freelancehub-video-metting.netlify.app"
+                        target="_bas"
+                      >
+                        Video chat
+                      </a>
+                    </li>
+
                     {!currstudent && !curruser && (
                       <li className="nav-item">
                         <NavLink className="nav-link" to="/slogin">
