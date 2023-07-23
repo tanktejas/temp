@@ -39,9 +39,7 @@ function Footer() {
                 <div>
                   <i class="fa fa-envelope"></i>
                   <p>
-                    <a href="mailto:support@company.com">
-                      FreelanceHUB@gmail.com
-                    </a>
+                    <a href="mailto:support@company.com">abcd@gmail.com</a>
                   </p>
                 </div>
               </div>
@@ -106,20 +104,12 @@ function Footer() {
                 <Link to="/login">
                   <li>
                     <a href="#" className="lear-more-l">
-                      Non-developer Login
+                      Login/signin
                     </a>
                   </li>
                 </Link>
                 <br />
-                <Link to="/tlogin">
-                  <li className="hiring-link blink-menu">
-                    <a href="#" className="lear-more-l blink-active">
-                      Developer Login
-                    </a>{" "}
-                    <span className="hiring">We Are Hiring</span>
-                  </li>
-                </Link>
-                <br />
+
                 <Link to="/About-Scholar">
                   <li>
                     <a href="#" className="lear-more-l">
@@ -137,43 +127,7 @@ function Footer() {
                 </Link>
               </ul>
             </div>
-            <div className="footer-link ftr__list nav">
-              <h5
-                onClick={() => {
-                  if (width <= 987) {
-                    if (ns["max-height"] == "0px") {
-                      setns({ "max-height": "100%" });
-                    } else {
-                      setns({ "max-height": "0px" });
-                    }
-                  }
-                }}
-              >
-                All Projects
-              </h5>
-              <ul style={width <= 987 ? ns : {}}>
-                <li>
-                  <a href="#" className="lear-more-l">
-                    Marketing Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="lear-more-l">
-                    Business Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="lear-more-l">
-                    Style Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="lear-more-l">
-                    Technology Projects
-                  </a>
-                </li>
-              </ul>
-            </div>
+
             {/* <div className="footer-link ftr__list nav">
               <h5
                 onClick={() => {

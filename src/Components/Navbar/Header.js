@@ -97,7 +97,7 @@ function Header() {
                       <i class="fab fa-facebook"></i>
                     </span>
                     <span>
-                      Freelance <sub>HUB</sub>{" "}
+                      abcd <sub>EFG</sub>{" "}
                     </span>
                   </a>
                 </Link>
@@ -131,13 +131,6 @@ function Header() {
                       </NavLink>
                     </li>
 
-                    {(curruser || currstudent) && (
-                      <li className="nav-item ">
-                        <NavLink className="nav-link" to="/chat">
-                          My Chat
-                        </NavLink>
-                      </li>
-                    )}
                     <li
                       className="nav-item dropdown"
                       onClick={() => {
@@ -158,11 +151,6 @@ function Header() {
                         Projects
                       </NavLink>
                     </li>
-                    <li className="nav-item ">
-                      <NavLink className="nav-link " to="/review">
-                        Give Review
-                      </NavLink>
-                    </li>
 
                     <li className="nav-item dropdown">
                       <Link
@@ -179,16 +167,6 @@ function Header() {
                       <NavLink className="nav-link " to="/contact">
                         Contact
                       </NavLink>
-                    </li>
-
-                    <li className="nav-item ">
-                      <a
-                        className="nav-link "
-                        href="https://freelancehub-video-metting.netlify.app"
-                        target="_bas"
-                      >
-                        Video chat
-                      </a>
                     </li>
 
                     {!currstudent && !curruser && (

@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import Home from "./Components/home/home";
@@ -26,27 +25,17 @@ import Developerforgot from "./Components/loginsigninuser/forgot1";
 import Dataform from "./Components/dataform/dataform";
 import Nondevprofile from "./Components/Non-dev-profile";
 
-//study
-import StudyAtG from "./Components/study/StudyAtR.js";
-import StudyAtR from "./Components/study/StudyAtR.js";
-import StudyAtUK from "./Components/study/StudyAtUK";
-import StudyAtCa from "./Components/study/StudyAtCa";
-import StudyAtU from "./Components/study/StudyAtU.js";
 // import Dashboard from "./Dashboard/main";
 
 //dashboard
 import Dashboard from "./Components/dashboard/dashboard";
 import Editlandpage from "./Components/dashboard/Edit_Profile/Edit_landpage";
-import ChatDash from "./Components/chatComp/chatdashboard";
-import Edittagname from "./Components/dashboard/Edit_Profile/Edit_name_tag";
 import Uploadproject from "./Components/upload/uploadprojectpage";
 import Uploadedproject from "./Components/upload/uploadedproject";
 
 //private route
 import Private from "./private/privateRoute";
-import Mainchat from "./Components/chatComp/mainchat";
 import Review from "./Components/Review/review";
-import Givereview from "./Components/Review/give_review";
 
 function App() {
   return (
@@ -61,7 +50,6 @@ function App() {
             element={<AllScho />}
           ></Route>
           <Route exact path="/About-Scholar" element={<AboutUsPage />}></Route>
-          <Route exact path="/Team" element={<Team />}></Route>
           <Route exact path="/scholarship-info" element={<Details />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
 
@@ -74,11 +62,7 @@ function App() {
           <Route exact path="/forgot" element={<Developerforgot />}></Route>
           <Route exact path="/review" element={<Review />}></Route>
           <Route exact path="/form" element={<Dataform />}></Route>
-          <Route exact path="/study-at-rusia" element={<StudyAtR />}></Route>
-          <Route exact path="/study-at-ukrain" element={<StudyAtUK />}></Route>
-          <Route exact path="/study-at-germany" element={<StudyAtG />}></Route>
-          <Route exact path="/study-at-canada" element={<StudyAtCa />}></Route>
-          <Route exact path="/study-at-us" element={<StudyAtU />}></Route>
+
           <Route exact path="/project/:schoid" element={<AllCard />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
           <Route
@@ -86,24 +70,14 @@ function App() {
             path="/QnA"
             element={<Private Comp={<Comment />} />}
           ></Route>
-          <Route exact path="/chat" element={<ChatDash />}></Route>
-          <Route exact path="/chat/:to" element={<Mainchat />}></Route>
+
           <Route exact path="/profile" element={<Nondevprofile />}></Route>
           <Route
             exact
             path="/Dashboard/editprofileimage"
             element={<Editlandpage />}
           ></Route>
-          <Route
-            exact
-            path="/review/:nameofrevi"
-            element={<Givereview />}
-          ></Route>
-          <Route
-            exact
-            path="/Dashboard/editprofiletagname"
-            element={<Edittagname />}
-          ></Route>
+
           <Route
             exact
             path="/Dashboard/uploadproject"
@@ -113,8 +87,7 @@ function App() {
             exact
             path="/Dashboard/Uploadedproject"
             element={<Uploadedproject />}
-          ></Route>    
-          <Route exact path="/review" element={<Uploadproject />}></Route>
+          ></Route>
 
           <Route exact path="/Dashboard" element={<Dashboard />}></Route>
         </Routes>

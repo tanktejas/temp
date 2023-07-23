@@ -80,7 +80,7 @@ const Contact = () => {
         </h5>
         <h5 className="my-1 mb-4">
           {emailIconSVG()} <span className="fw-bold">Email:</span>{" "}
-          freelancehub@gmail.com
+          abcdefg@gmail.com
         </h5>
       </div>
 
